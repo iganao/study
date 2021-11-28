@@ -108,7 +108,26 @@ dbにログイン
 ・pg_restore -d データベース名 -U postgres /ファイルの階層  
 リストア  
 ・docker-compose run web bundle exec rake db:migrate RAILS_ENV=development  
-環境指定
+環境指定  
+
+### データベースにログイン (docker.postgresql)  
+・docker-compose exec db bash  
+データベースにログイン  
+・su postgres  
+ユーザー権限を切り替える  
+・psql データベース名  
+データベースを指定して接続  
+
+### ウェブにログイン (docker.rails.postgresql)  
+・docker-compose exec web bash  
+webにログイン。
+
+### 無駄なボリュームを削除  
+・docker system prune  
+イメージ、コンテナ、ネットワークを削除  
+(Docker 17.06.1 以上でボリュームも削除したい場合は、docker system prune --volumes)  
+・docker volume rm 'docker volume ls -qf danging=true'  
+コンテナから参照されていない(不要な)ボリュームを列挙して(docker volume ls ...)、それをdocker volume rmで削除している。  
 
 
 
