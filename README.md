@@ -100,14 +100,15 @@ MultiAZ構成とは、複数のデータセンターであるAZ（Availability Z
 
 ## ◯Docker  
 
-### リストアまでの流れ  
+### リストアまでの流れ (docker.rails.postgresql)
 ・docker cp ファイル名 コンテナ名orコンテナID:/ファイルの階層  
 コピー  
 ・docker-compose exec db bash  
 dbにログイン  
 ・pg_restore -d データベース名 -U postgres /ファイルの階層  
 リストア  
-
+・docker-compose run web bundle exec rake db:migrate RAILS_ENV=development  
+環境指定
 
 
 
