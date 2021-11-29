@@ -1,4 +1,6 @@
-# 独学
+# 独学  
+
+# PHPに関してはstudy.phpファイル  
 
 ## ◯FizzBuzz問題  
 
