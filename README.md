@@ -74,7 +74,7 @@ for(var i=1;i<101;i++) console.log((i%3?'':'fizz')+(i%5?'':'buzz')||i);
 <?php foreach(range(1,100)as$i){echo($i%5&&$i%3?$i:'').($i%5?'':'fizz').($i%3?'':'buzz')."\n";}  
 
 
-## RDS
+## RDS  
 RDSはAmazon Relational Database Serviceの略  
 マネージド型だから、データベース運用における面倒な部分を色々AWS側が面倒見てくれるサービス。  
 オペレーティングシステムやデータベースエンジンの管理はAWS側で行われ、利用者は数分でデータベースを起動してアクセスできる。  
