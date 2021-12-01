@@ -144,6 +144,26 @@ $a === $bは$a が $b に等しく、および同じ型である場合に TRUE
 基本的には厳密な比較演算子===を使えば自動キャストは行われないので、前情報通りこちらを使用した方が無難そうです。
 
 
+◯fizzbizz
+・ワンライナー
+<?php foreach(range(1,100)as$i){echo($i%5&&$i%3?$i:'').($i%5?'':'fizz').($i%3?'':'buzz')."\n";}?>
+
+・一般
+<?php
+for ($i = 1; $i <= 100; $i++) {
+    if ($i % 15 === 0) {
+        echo 'fizzbuzz';
+    } elseif ($i % 5 === 0) {
+        echo 'buzz';
+    } elseif ($i % 3 === 0) {
+        echo 'fizz';
+    } else {
+        echo $i;
+    }
+}
+?>
+
+
 ◯文字列・数値
 printf(), sprintf()
 文字列をフォーマットに当てはめて出力する。
